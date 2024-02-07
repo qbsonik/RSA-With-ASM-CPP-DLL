@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -14,10 +15,16 @@ namespace JAProj
         [DllImport(@"C:\Users\kuban\OneDrive\Pulpit\StudiaSEM5\JA\JAProj\JAProj\x64\Debug\DLL_CPP.dll")]
         private static extern void RSADecrypt(byte[] input, int inputLength, byte[] output, ref int outputLength);
 
-        public void Decrypt(TextBox textToChange, TextBox textAfterChange)
+        public void Decrypt(TextBox textToChange, TextBox textAfterChange, Label measuredTime)
         {
             try
             {
+
+                // Rozpocznij mierzenie czasu wykonania
+                Stopwatch stopwatch = new Stopwatch();
+                stopwatch.Start();
+
+
                 // Pobierz dane do odszyfrowania z TextBoxa
                 string encryptedText = textToChange.Text;
                 byte[] inputBytes = Convert.FromBase64String(encryptedText); // Konwertuj zaszyfrowany tekst z formatu Base64 na bajty
@@ -30,10 +37,14 @@ namespace JAProj
                 RSADecrypt(inputBytes, inputBytes.Length, decryptedBytes, ref decryptedLength);
 
                 // Przetwórz odszyfrowane dane (np. wyświetl lub zapisz)
-                string decryptedText = Encoding.UTF32.GetString(decryptedBytes, 0, decryptedLength); // Konwertuj odszyfrowane bajty na tekst !!!!!! BŁĄD !!!!!!!
+                string decryptedText = Encoding.ASCII.GetString(decryptedBytes, 0, decryptedLength); // Konwertuj odszyfrowane bajty na tekst !!!!!! BŁĄD !!!!!!!
 
                 // Wprowadź odszyfrowany tekst do TextBoxa o nazwie textAfterChange
                 textAfterChange.Text = decryptedText;
+
+                // Wyświetl zmierzony czas
+                stopwatch.Stop();
+                measuredTime.Text = stopwatch.Elapsed.TotalMilliseconds.ToString("F4") + " ms";
             }
             catch (Exception ex)
             {

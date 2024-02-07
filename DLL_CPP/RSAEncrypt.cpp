@@ -52,7 +52,7 @@ extern "C" __declspec(dllexport) void RSAEncrypt(byte * input, int inputLength, 
     // Szyfruj dane
     for (int i = 0; i < inputLength; i++)
     {
-        output[i] = powermod(input[i], e, n);
+        output[i] += powermod(input[i], e, n);
     }
 
     *outputLength = inputLength;

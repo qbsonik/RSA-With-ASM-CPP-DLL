@@ -40,13 +40,13 @@ namespace JAProj
             {
                 // Wywołaj metodę z klasy EncryptCpp
                 EncryptCpp encryptCpp = new EncryptCpp();
-                encryptCpp.Encrypt(textToChange, textAfterChange);
+                encryptCpp.Encrypt(textToChange, textAfterChange, measuredTime);
             }
             else if (AppInAsm.Checked)
             {
                 // Wywołaj metodę z klasy EncryptAsm
-                //EncryptAsm encryptAsm = new EncryptAsm();
-                //encryptAsm.Encrypt();
+                EncryptAsm encryptAsm = new EncryptAsm();
+                encryptAsm.Encrypt(textToChange, textAfterChange, measuredTime);
             }
             else
             {
@@ -61,7 +61,7 @@ namespace JAProj
             {
                 // Wywołaj metodę z klasy EncryptCpp
                 DecryptCpp decryptCpp = new DecryptCpp();
-                decryptCpp.Decrypt(textToChange, textAfterChange);
+                decryptCpp.Decrypt(textToChange, textAfterChange, measuredTime);
             }
             else if (AppInAsm.Checked)
             {

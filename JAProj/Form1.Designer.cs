@@ -69,7 +69,7 @@
             // AppInCpp
             // 
             this.AppInCpp.AutoSize = true;
-            this.AppInCpp.Location = new System.Drawing.Point(767, 472);
+            this.AppInCpp.Location = new System.Drawing.Point(701, 482);
             this.AppInCpp.Name = "AppInCpp";
             this.AppInCpp.Size = new System.Drawing.Size(44, 17);
             this.AppInCpp.TabIndex = 2;
@@ -80,7 +80,7 @@
             // AppInAsm
             // 
             this.AppInAsm.AutoSize = true;
-            this.AppInAsm.Location = new System.Drawing.Point(767, 515);
+            this.AppInAsm.Location = new System.Drawing.Point(701, 525);
             this.AppInAsm.Name = "AppInAsm";
             this.AppInAsm.Size = new System.Drawing.Size(48, 17);
             this.AppInAsm.TabIndex = 3;
@@ -92,7 +92,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(711, 421);
+            this.label1.Location = new System.Drawing.Point(645, 431);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 29);
             this.label1.TabIndex = 4;
@@ -102,7 +102,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(864, 487);
+            this.label2.Location = new System.Drawing.Point(798, 497);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(191, 29);
             this.label2.TabIndex = 5;
@@ -112,7 +112,7 @@
             // 
             this.measuredTime.AutoSize = true;
             this.measuredTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.measuredTime.Location = new System.Drawing.Point(1061, 487);
+            this.measuredTime.Location = new System.Drawing.Point(995, 497);
             this.measuredTime.Name = "measuredTime";
             this.measuredTime.Size = new System.Drawing.Size(31, 29);
             this.measuredTime.TabIndex = 6;
@@ -124,9 +124,8 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(1098, 487);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 29);
+            this.label3.Size = new System.Drawing.Size(0, 29);
             this.label3.TabIndex = 7;
-            this.label3.Text = "ms";
             // 
             // threadPick
             // 

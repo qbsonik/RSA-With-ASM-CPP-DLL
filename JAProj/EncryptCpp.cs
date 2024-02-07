@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -14,13 +15,19 @@ namespace JAProj
         [DllImport(@"C:\Users\kuban\OneDrive\Pulpit\StudiaSEM5\JA\JAProj\JAProj\x64\Debug\DLL_CPP.dll")]
         private static extern void RSAEncrypt(byte[] input, int inputLength, byte[] output, ref int outputLength);
 
-        public void Encrypt(TextBox textToChange, TextBox textAfterChange)
+        public void Encrypt(TextBox textToChange, TextBox textAfterChange, Label measuredTime)
         {
             try
             {
+
+                // Rozpocznij mierzenie czasu wykonania
+                Stopwatch stopwatch = new Stopwatch();
+                stopwatch.Start();
+
+
                 // Pobierz dane do zaszyfrowania z TextBoxa
                 string plaintext = textToChange.Text;
-                byte[] inputBytes = Encoding.UTF8.GetBytes(plaintext);
+                byte[] inputBytes = Encoding.ASCII.GetBytes(plaintext);
 
                 // Bufor na zaszyfrowane dane
                 byte[] encryptedBytes = new byte[inputBytes.Length]; 
@@ -34,6 +41,11 @@ namespace JAProj
 
                 // Wprowadź zaszyfrowany tekst do TextBoxa o nazwie textAfterChange
                 textAfterChange.Text = encryptedText;
+
+                // Wyświetl zmierzony czas
+                stopwatch.Stop();
+                measuredTime.Text = stopwatch.Elapsed.TotalMilliseconds.ToString("F4") + " ms";
+
             }
             catch (Exception ex)
             {
