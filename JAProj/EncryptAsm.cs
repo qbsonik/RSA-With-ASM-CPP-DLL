@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace JAProj
@@ -25,13 +22,13 @@ namespace JAProj
 
                 // Pobierz dane do zaszyfrowania z TextBoxa
                 string plaintext = textToChange.Text;
-                byte[] inputBytes = Encoding.ASCII.GetBytes(plaintext);
+                byte[] inputBytes = Encoding.Unicode.GetBytes(plaintext); // Użyj Unicode, aby obsługiwać znaki spoza standardu ASCII
 
                 // Bufor na zaszyfrowane dane
                 byte[] encryptedBytes = new byte[inputBytes.Length * 2]; // Zakładam, że zaszyfrowane dane nie będą większe niż oryginalne
 
                 // Wywołaj funkcję z biblioteki DLL
-                int encryptedLength = 0;
+                int encryptedLength = encryptedBytes.Length; // Początkowa wartość długości bufora
                 RSAEncrypt(inputBytes, inputBytes.Length, encryptedBytes, ref encryptedLength);
 
                 // Przetwórz zaszyfrowane dane (np. wyświetl lub zapisz)
