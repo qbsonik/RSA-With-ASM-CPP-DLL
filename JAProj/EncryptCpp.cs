@@ -19,18 +19,16 @@ namespace JAProj
         {
             try
             {
-
                 // Rozpocznij mierzenie czasu wykonania
                 Stopwatch stopwatch = new Stopwatch();
                 stopwatch.Start();
-
 
                 // Pobierz dane do zaszyfrowania z TextBoxa
                 string plaintext = textToChange.Text;
                 byte[] inputBytes = Encoding.ASCII.GetBytes(plaintext);
 
                 // Bufor na zaszyfrowane dane
-                byte[] encryptedBytes = new byte[inputBytes.Length]; 
+                byte[] encryptedBytes = new byte[inputBytes.Length * 2]; 
 
                 // Wywołaj funkcję z biblioteki DLL
                 int encryptedLength = 0;

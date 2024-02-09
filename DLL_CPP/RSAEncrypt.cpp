@@ -39,8 +39,8 @@ int powermod(int base, int exp, int modulus) {
         if (exp & 1) result = (result * base) % modulus;
         base = (base * base) % modulus;
         exp >>= 1;
-    }
     return result;
+    }
 }
 
 extern "C" __declspec(dllexport) void RSAEncrypt(byte * input, int inputLength, byte * output, int* outputLength)
