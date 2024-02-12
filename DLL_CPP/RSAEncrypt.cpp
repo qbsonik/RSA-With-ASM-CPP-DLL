@@ -12,16 +12,9 @@ void generateRSAKeys(int& e, int& d, int& n) {
     // W prawdziwym kodzie RSA, te wartoœci by³yby wygenerowane losowo
     int p = 61;
     int q = 73;
+    e = 2137;
     n = p * q;
     int phi = (p - 1) * (q - 1);
-
-    // Wybierz e tak, aby 1 < e < phi(n) i gcd(e, phi(n)) = 1
-    for (int i = 2; i < phi; i++) {
-        if (gcd(i, phi) == 1) {
-            e = i;
-            break;
-        }
-    }
 
     // Wybierz d tak, aby (d * e) % phi(n) = 1
     for (int i = 2; i < phi; i++) {
